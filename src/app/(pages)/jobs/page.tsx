@@ -7,12 +7,18 @@ type Props = {};
 export const dynamic = "force-dynamic";
 
 async function fetchJobs() {
+  try{
   const res = await fetch(MyURL("/api/projects"), {
-    cache: "no-store",
+    //cache: "no-store",
     next: { revalidate: 10 },
   });
   const data = await res.json();
   return data;
+  }
+  catch(err){
+    console.log('err',err)
+    return {status:"", data:{}}
+  }
 }
 
 export default async function Page({}: Props) {
