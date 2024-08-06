@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .primaryButton{
+    @apply tracking-wide font-semibold bg-indigo-500 text-gray-100 px-6 py-3 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:outline-none;
+  }
+  .secondaryButton{
+    @apply tracking-wide font-semibold bg-btnbg text-gray-100 px-6 py-3 rounded-lg hover:bg-indigo-900 transition-all duration-300 ease-in-out flex items-center justify-center focus:outline-none;
+  }
+}
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  /* color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+
+}
+.custom-background{
+  background:linear-gradient(30deg,#bebae9,#e0cfef 15%,#f6effa 50%,#e5cef9 85%,#e9e7ff);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
