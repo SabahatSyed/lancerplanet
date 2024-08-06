@@ -2,7 +2,12 @@
 import {  type FileRouter } from "uploadthing/next";
 import { createUploadthing } from "uploadthing/server";
 
-const f = createUploadthing();
+const f = createUploadthing({
+  appId: process.env.NEXT_PUBLIC_UPLOADTHING_APP_ID || "0bz31lq4y3",
+  secretKey:
+    process.env.NEXT_PUBLIC_UPLOADTHING_SECRET_KEY ||
+    "sk_live_b00904d5cb24c74f1a30ec2e6993d14015c1319ed2bae461621f6e016b7521df",
+});
 const auth = (req: Request) => ({ id: "fakeId" }); // Fake auth function
 
 // FileRouter for your app, can contain multiple FileRoutes
